@@ -18,7 +18,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         invx <- NULL                                               #initialize the inverse to NULL for new fnc call
-        set <- function(input) {                                  #set the matrix in cache, plus inverse to NULL
+        set <- function(input) {                                   #set the matrix in cache, plus inverse to NULL
                 x <<- input
                 invx <<- NULL
         }
@@ -43,8 +43,8 @@ cacheSolve <- function(z, ...) {
                 message("getting cached data")
                 return(invx)
         }
-        x <- z$get()                                        # get matrix from cache 
-        invx <- solve(x, ...)                               # calculate inverse of matrix
-        z$setinverse(invx)                                  # store inverse of matrix in cache
+        x <- z$get()                                           # get matrix from cache 
+        invx <- solve(x, ...)                                  # calculate inverse of matrix
+        z$setinverse(invx)                                     # store inverse of matrix in cache
         invx                                                   # return inverse of matrix
 }
